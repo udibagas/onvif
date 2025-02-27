@@ -3,7 +3,7 @@ const fs = require("fs");
 
 // Device Configuration
 let device = new onvif.OnvifDevice({
-  xaddr: "http://10.5.11.121:8000/onvif/device_service",
+  xaddr: "http://10.131.0.98:8000/onvif/device_service",
   user: "admin",
   pass: "admin@321",
 });
