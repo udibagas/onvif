@@ -1,5 +1,6 @@
 const onvif = require("node-onvif"); // Install using 'npm install onvif'
 const fs = require("fs");
+const ffmpeg = require("fluent-ffmpeg");
 
 // Device Configuration
 let device = new onvif.OnvifDevice({
@@ -46,11 +47,3 @@ device
   .catch((error) => {
     console.error(error);
   });
-
-const ffmpeg = require("fluent-ffmpeg");
-const fs = require("fs");
-
-// RTSP stream URL
-const rtspUrl = "rtsp://username:password@your_cctv_ip:port/stream";
-
-// Output file path for the snapshot
