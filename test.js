@@ -48,7 +48,7 @@ device
         timestamps: [0],
         filename: "snapshot.jpg",
         folder: "./",
-        size: "640x480",
+        size: "1024x576",
       });
   })
   // .then((res) => {
