@@ -22,20 +22,29 @@ device
 
     // Create an FFmpeg command
     ffmpeg(profile.stream.rtsp)
+      .inputOptions([
+        "-rtsp_transport",
+        "tcp", // Force TCP transport
+        "-stimeout",
+        "5000000", // Set timeout to 5 seconds
+      ])
       .on("start", (commandLine) => {
-        console.log("FFmpeg process started with command: " + commandLine);
+        console.log("FFmpeg command:", commandLine);
+      })
+      .on("stderr", (stderrLine) => {
+        console.log("FFmpeg stderr:", stderrLine);
       })
       .on("error", (err) => {
-        console.error("Error occurred: " + err.message);
+        console.error("Error:", err.message);
       })
       .on("end", () => {
-        console.log("Snapshot captured successfully!");
+        console.log("Snapshot captured!");
       })
       .screenshots({
-        timestamps: [0], // Capture the first frame (0 seconds)
-        filename: outputFilePath,
-        folder: "./", // Save in the current directory
-        size: "640x480", // Optional: Set the resolution of the snapshot
+        timestamps: [0],
+        filename: "snapshot.jpg",
+        folder: "./",
+        size: "640x480",
       });
   })
   // .then((res) => {
