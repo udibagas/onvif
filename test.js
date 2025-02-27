@@ -26,6 +26,12 @@ device
         "-rtsp_transport",
         "tcp", // Force TCP transport
       ])
+      .outputOptions([
+        "-vcodec",
+        "mjpeg", // Use MJPEG codec for JPEG output
+        "-q:v",
+        "2", // Set quality (1 = highest, 31 = lowest)
+      ])
       .on("start", (commandLine) => {
         console.log("FFmpeg command:", commandLine);
       })
