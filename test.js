@@ -19,6 +19,7 @@ device
     return device.fetchSnapshot();
   })
   .then((res) => {
+    console.log(res);
     // Save the data to a file
     fs.writeFileSync("snapshot.jpg", res.body, { encoding: "binary" });
     console.log("Done!");
