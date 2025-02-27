@@ -22,10 +22,10 @@ device
 
     // Create an FFmpeg command
     ffmpeg(profile.stream.rtsp)
-      .inputOptions([
-        "-rtsp_transport",
-        "tcp", // Force TCP transport
-      ])
+      // .inputOptions([
+      //   "-rtsp_transport",
+      //   "tcp", // Force TCP transport
+      // ])
       .outputOptions([
         "-vcodec",
         "mjpeg", // Use MJPEG codec for JPEG output
@@ -45,10 +45,10 @@ device
         console.log("Snapshot captured!");
       })
       .screenshots({
-        timestamps: [0],
+        // timestamps: [0],
         filename: "snapshot.jpg",
         folder: "./",
-        size: "1024x576",
+        // size: "1024x576",
       });
   })
   // .then((res) => {
