@@ -15,7 +15,7 @@ device
     console.log(JSON.stringify(info, null, "  "));
 
     let profile = device.getCurrentProfile();
-    console.dir(profile_list, { depth: null });
+    console.dir(profile, { depth: null });
     return device.fetchSnapshot();
   })
   .then((res) => {
