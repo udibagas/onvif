@@ -22,13 +22,12 @@ device
 
     // Create an FFmpeg command
     ffmpeg(profile.stream.rtsp)
-      // .inputOptions([
-      //   "-rtsp_transport",
-      //   "tcp", // Force TCP transport
-      // ])
+      .inputOptions(["-rtsp_transport", "tcp"]) // Force TCP transport
       .outputOptions([
+        "-vframes",
+        "1", // Capture only 1 frame
         "-vcodec",
-        "mjpeg", // Use MJPEG codec for JPEG output
+        "mjpeg", // Use MJPEG codec
         "-q:v",
         "2", // Set quality (1 = highest, 31 = lowest)
       ])
@@ -44,19 +43,8 @@ device
       .on("end", () => {
         console.log("Snapshot captured!");
       })
-      .screenshots({
-        timestamps: [0],
-        filename: "snapshot.jpg",
-        folder: "./",
-        // size: "1024x576",
-      });
+      .save("snapshot.jpg");
   })
-  // .then((res) => {
-  //   console.log(res);
-  //   // Save the data to a file
-  //   fs.writeFileSync("snapshot.jpg", res.body, { encoding: "binary" });
-  //   console.log("Done!");
-  // })
   .catch((error) => {
     console.error(error);
   });
