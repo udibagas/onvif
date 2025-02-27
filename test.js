@@ -25,8 +25,6 @@ device
       .inputOptions([
         "-rtsp_transport",
         "tcp", // Force TCP transport
-        "-stimeout",
-        "5000000", // Set timeout to 5 seconds
       ])
       .on("start", (commandLine) => {
         console.log("FFmpeg command:", commandLine);
