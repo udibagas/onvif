@@ -1,0 +1,42 @@
+{
+  audios: [ null ],
+  rows: [
+    {
+      userdata: {
+        photoPath: 'images/userImage.gif',
+        isExistCardOp: false,
+        photoBase64: '',
+        status: 'normal',
+        eventNo: 0
+      },
+      data: [
+        '2025-01-09 15:23:45',
+        'TPSM',
+        'POS MOTOR 607(JHT4242900012)',
+        'POS MOTOR 607 OUT',
+        'acc_newEventNo_0',
+        '9060429',
+        '694052985(ENDAR OPR RTG)',
+        'POS MOTOR 607-Out',
+        'common_verifyMode_onlyCard',
+        'POS MOTOR 607##JHT4242900012##POS MOTOR 607 OUT##0',
+        '8a02805b92e7af5001943f7d69541fd7',
+        true,
+        '694052985'
+      ],
+      style: 'color:green',
+      id: 'JHT4242900012_1294_2025-01-09 15:23:45'
+    }
+  ]
+}
+--------------------------------------------------
+Time: 2025-01-09 15:23:45
+Area: TPSM
+Device: POS MOTOR 607(JHT4242900012)
+Event Point: POS MOTOR 607 OUT
+Event Description: acc_newEventNo_0
+Card Number: 9060429
+Person: 694052985(ENDAR OPR RTG)
+Reader Name: POS MOTOR 607-Out
+Verification Mode: common_verifyMode_onlyCard
+--------------------------------------------------
