@@ -45,7 +45,7 @@ device
         console.log("Snapshot captured!");
       })
       .screenshots({
-        // timestamps: [0],
+        timestamps: [0],
         filename: "snapshot.jpg",
         folder: "./",
         // size: "1024x576",
